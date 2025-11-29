@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddhirlv13lq72"]
+
+[ext_resource type="ArrayMesh" uid="uid://nhvbwk437ovb" path="res://models/pumpkin/pumpkin.obj" id="1_dxx8f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axt2h"]
+size = Vector3(2.1195068, 1.8875732, 2.2636108)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Pumpkin" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01027143, 0, 0.002233237)
+mesh = ExtResource("1_dxx8f")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pumpkin"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pumpkin/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0065307617, 0.44378662, -0.0030212402)
+shape = SubResource("BoxShape3D_axt2h")
